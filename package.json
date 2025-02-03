@@ -1,0 +1,35 @@
+{
+   "name": "sgl",
+   "displayName": "Simple Grammar Language",
+   "description": "This is a Simple Grammar Language Highligher",
+   "publisher": "Alan Lima",
+   "version": "0.0.1",
+   "engines": {
+      "vscode": "^1.96.0"
+   },
+   "categories": [
+      "Programming Languages"
+   ],
+   "contributes": {
+      "languages": [
+         {
+            "id": "sgl",
+            "aliases": ["sgl"],
+            "extensions": [".sgl"],
+            "configuration": "./language-configuration.json"
+         }
+      ],
+      "grammars": [
+         {
+            "language": "sgl",
+            "scopeName": "source.sgl",
+            "path": "./syntaxes/sgl.tmLanguage.json"
+         }
+      ]
+   },
+   "author": {
+      "name": "Alan Lima",
+      "email": "alanlimanvc@gmail.com",
+      "url": "https://github.com/AlanLima287"
+   }
+}

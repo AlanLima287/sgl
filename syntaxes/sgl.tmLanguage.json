@@ -1,0 +1,76 @@
+{
+   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+   "name": "alang",
+   "patterns": [
+      {
+         "include": "#comments"
+      },
+      {
+         "include": "#strings"
+      },
+      {
+         "include": "#non-terminals"
+      },
+      {
+         "include": "#terminals"
+      }
+   ],
+   "repository": {
+      "comments": {
+         "patterns": [
+            {
+               "name": "comment.block",
+               "begin": "---",
+               "end": "---"
+            },
+            {
+               "name": "comment.line",
+               "begin": "--",
+               "end": "\\n"
+            }
+         ]
+      },
+      "strings": {
+         "patterns": [
+            {
+               "name": "string.quoted.single",
+               "begin": "'",
+               "end": "'",
+               "patterns": [
+                  {
+                     "name": "constant.character.escape",
+                     "match": "\\\\."
+                  }
+               ]
+            },
+            {
+               "name": "string.regexp",
+               "begin": "/",
+               "end": "/",
+               "patterns": [
+                  {
+                     "name": "string.regexp",
+                     "match": "\\\\."
+                  }
+               ]
+            }
+         ]
+      },
+      "non-terminals": {
+         "name": "punctuation.definition.tag",
+         "begin": "<",
+         "end": ">",
+         "patterns": [
+            {
+               "name": "entity.name.tag",
+               "match": "."
+            }
+         ]
+      },
+      "terminals": {
+         "name": "variable",
+         "match": "\\b([a-zA-Z]|_[0-9a-zA-Z_])[0-9a-zA-Z_]*\\b"
+      }
+   },
+   "scopeName": "source.sgl"
+}
