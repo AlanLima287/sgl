@@ -2,14 +2,19 @@
    "name": "sgl",
    "displayName": "Simple Grammar Language",
    "description": "This is a Simple Grammar Language Highligher",
-   "publisher": "Alan Lima",
+   "publisher": "alan-lima",
+   "author": {
+      "name": "Alan Lima",
+      "email": "alanlimanvc@gmail.com",
+      "url": "https://github.com/AlanLima287"
+   },
+   "categories": ["Programming Languages"],
    "version": "0.0.1",
+   "license": "MIT",
+   "icon": "icon.png",
    "engines": {
       "vscode": "^1.96.0"
    },
-   "categories": [
-      "Programming Languages"
-   ],
    "contributes": {
       "languages": [
          {
@@ -27,9 +32,8 @@
          }
       ]
    },
-   "author": {
-      "name": "Alan Lima",
-      "email": "alanlimanvc@gmail.com",
-      "url": "https://github.com/AlanLima287"
+   "repository": {
+      "type": "github",
+      "url": "https://github.com/AlanLima287/SGL.git"
    }
 }
