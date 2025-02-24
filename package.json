@@ -11,7 +11,7 @@
    "categories": ["Programming Languages"],
    "version": "0.0.1",
    "license": "MIT",
-   "icon": "icon.png",
+   "icon": "./assets/icon.png",
    "engines": {
       "vscode": "^1.96.0"
    },
@@ -21,7 +21,11 @@
             "id": "sgl",
             "aliases": ["sgl"],
             "extensions": [".sgl"],
-            "configuration": "./language-configuration.json"
+            "configuration": "./language-configuration.json",
+            "icon": {
+               "dark": "./assets/sgl.png",
+               "light": "./assets/sgl.png"
+            }
          }
       ],
       "grammars": [

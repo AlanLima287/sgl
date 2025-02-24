@@ -45,6 +45,17 @@
                ]
             },
             {
+               "name": "string.quoted.double",
+               "begin": "\"",
+               "end": "\"",
+               "patterns": [
+                  {
+                     "name": "constant.character.escape",
+                     "match": "\\\\."
+                  }
+               ]
+            },
+            {
                "name": "string.regexp",
                "begin": "/",
                "end": "/",
@@ -63,8 +74,24 @@
                "match": "\\\\[bB]|\\^|\\$"
             },
             {
+               "name": "constant.character.escape.regexp",
+               "match": "\\\\[wWsSdDtrnvf]|\\."
+            },
+            {
+               "name": "constant.character.numeric.regexp",
+               "match": "\\\\([0-7]{3}|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4})"
+            },
+            {
+               "name": "constant.character.control.regexp",
+               "match": "\\\\c[A-Z]"
+            },
+            {
+               "name": "constant.character.escape.backslash.regexp",
+               "match": "\\\\."
+            },
+            {
                "name": "keyword.operator.quantifier.regexp",
-               "match": "([?+*]|\\{(\\d+,\\d+|\\d+,|,\\d+|\\d+)\\})\\??"
+               "match": "([?+*]|\\{\\d+(,(\\d+)?)?\\})\\??"
             },
             {
                "name": "keyword.operator.or.regexp",
