@@ -46,7 +46,7 @@
             },
             {
                "name": "string.quoted.single",
-               "match": "'(.)?([^']*)'",
+               "match": "'(?:(.)|([^\\n\\r']{2,}))?'",
                "captures": {
                   "1": {
                      "name": "constant.character.escape"
@@ -228,7 +228,7 @@
          "patterns": [
             {
                "name": "entity.name.tag",
-               "match": ".*"
+               "match": "[^\\n<>]*"
             }
          ]
       },
