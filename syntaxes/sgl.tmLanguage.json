@@ -34,26 +34,27 @@
       "strings": {
          "patterns": [
             {
-               "name": "string.quoted.single",
-               "begin": "'",
-               "end": "'",
-               "patterns": [
-                  {
-                     "name": "constant.character.escape",
-                     "match": "\\\\."
-                  }
-               ]
-            },
-            {
                "name": "string.quoted.double",
                "begin": "\"",
                "end": "\"",
                "patterns": [
                   {
                      "name": "constant.character.escape",
-                     "match": "\\\\."
+                     "match": "\\\\\""
                   }
                ]
+            },
+            {
+               "name": "string.quoted.single",
+               "match": "'(.)?([^']*)'",
+               "captures": {
+                  "1": {
+                     "name": "constant.character.escape"
+                  },
+                  "2": {
+                     "name": "invalid.illegal"
+                  }
+               }
             },
             {
                "name": "string.regexp",
@@ -227,7 +228,7 @@
          "patterns": [
             {
                "name": "entity.name.tag",
-               "match": "."
+               "match": ".*"
             }
          ]
       },
