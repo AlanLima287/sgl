@@ -1,6 +1,6 @@
 {
    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-   "name": "alang",
+   "name": "alang.sgl",
    "scopeName": "source.sgl",
    "patterns": [
       {
@@ -20,12 +20,12 @@
       "comments": {
          "patterns": [
             {
-               "name": "comment.block",
+               "name": "comment.block.sgl",
                "begin": "---",
                "end": "---"
             },
             {
-               "name": "comment.line",
+               "name": "comment.line.sgl",
                "begin": "--",
                "end": "\\n"
             }
@@ -34,30 +34,41 @@
       "strings": {
          "patterns": [
             {
-               "name": "string.quoted.double",
-               "begin": "\"",
-               "end": "\"",
+               "name": "string.quoted.triple.sgl",
+               "begin": "\"\"\"",
+               "end": "\"\"\"",
                "patterns": [
                   {
-                     "name": "constant.character.escape",
-                     "match": "\\\\\""
+                     "name": "constant.character.escape.sgl",
+                     "match": "\\\\([\"abtnvfre]|[0-3]?[0-7]{1,2}|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})"
                   }
                ]
             },
             {
-               "name": "string.quoted.single",
+               "name": "string.quoted.double.sgl",
+               "begin": "\"",
+               "end": "\"",
+               "patterns": [
+                  {
+                     "name": "constant.character.escape.sgl",
+                     "match": "\\\\([\"abtnvfre]|[0-3]?[0-7]{1,2}|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})"
+                  }
+               ]
+            },
+            {
+               "name": "string.quoted.single.sgl",
                "match": "'(?:(.|\\\\(?:[abtnvfre]|[0-3]?[0-7]{1,2}|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8}))|([^\\n\\r']{2,}))?'",
                "captures": {
                   "1": {
-                     "name": "constant.character.escape"
+                     "name": "constant.character.escap.sgle"
                   },
                   "2": {
-                     "name": "invalid.illegal"
+                     "name": "invalid.illega.sgll"
                   }
                }
             },
             {
-               "name": "string.regexp",
+               "name": "string.regexp.sgl",
                "begin": "/",
                "end": "/",
                "patterns": [
@@ -71,60 +82,60 @@
       "regexp": {
          "patterns": [
             {
-               "name": "keyword.control.anchor.regexp",
+               "name": "keyword.control.anchor.regexp.sgl",
                "match": "\\\\[bB]|\\^|\\$"
             },
             {
-               "name": "constant.character.escape.regexp",
+               "name": "constant.character.escape.regexp.sgl",
                "match": "\\\\[wWsSdDtrnvf]|\\."
             },
             {
-               "name": "constant.character.numeric.regexp",
+               "name": "constant.character.numeric.regexp.sgl",
                "match": "\\\\([0-7]{3}|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4})"
             },
             {
-               "name": "constant.character.control.regexp",
+               "name": "constant.character.control.regexp.sgl",
                "match": "\\\\c[A-Z]"
             },
             {
-               "name": "constant.character.escape.backslash.regexp",
+               "name": "constant.character.escape.backslash.regexp.sgl",
                "match": "\\\\."
             },
             {
-               "name": "keyword.operator.quantifier.regexp",
+               "name": "keyword.operator.quantifier.regexp.sgl",
                "match": "([?+*]|\\{\\d+(,(\\d+)?)?\\})\\??"
             },
             {
-               "name": "keyword.operator.or.regexp",
+               "name": "keyword.operator.or.regexp.sgl",
                "match": "\\|"
             },
             {
-               "name": "meta.group.assertion.regexp",
+               "name": "meta.group.assertion.regexp.sgl",
                "begin": "(\\()((\\?=)|(\\?!)|(\\?<=)|(\\?<!))",
                "beginCaptures": {
                   "1": {
-                     "name": "punctuation.definition.group.regexp"
+                     "name": "punctuation.definition.group.regex.sglp"
                   },
                   "2": {
-                     "name": "punctuation.definition.group.assertion.regexp"
+                     "name": "punctuation.definition.group.assertion.regex.sglp"
                   },
                   "3": {
-                     "name": "meta.assertion.look-ahead.regexp"
+                     "name": "meta.assertion.look-ahead.regex.sglp"
                   },
                   "4": {
-                     "name": "meta.assertion.negative-look-ahead.regexp"
+                     "name": "meta.assertion.negative-look-ahead.regex.sglp"
                   },
                   "5": {
-                     "name": "meta.assertion.look-behind.regexp"
+                     "name": "meta.assertion.look-behind.regex.sglp"
                   },
                   "6": {
-                     "name": "meta.assertion.negative-look-behind.regexp"
+                     "name": "meta.assertion.negative-look-behind.regex.sglp"
                   }
                },
                "end": "(\\))",
                "endCaptures": {
                   "1": {
-                     "name": "punctuation.definition.group.regexp"
+                     "name": "punctuation.definition.group.regex.sglp"
                   }
                },
                "patterns": [
@@ -134,23 +145,23 @@
                ]
             },
             {
-               "name": "meta.group.regexp",
+               "name": "meta.group.regexp.sgl",
                "begin": "\\((?:(\\?:)|(?:\\?<([a-zA-Z_$][\\w$]*)>))?",
                "beginCaptures": {
                   "0": {
-                     "name": "punctuation.definition.group.regexp"
+                     "name": "punctuation.definition.group.regex.sglp"
                   },
                   "1": {
-                     "name": "punctuation.definition.group.no-capture.regexp"
+                     "name": "punctuation.definition.group.no-capture.regex.sglp"
                   },
                   "2": {
-                     "name": "variable.other.regexp"
+                     "name": "variable.other.regex.sglp"
                   }
                },
                "end": "\\)",
                "endCaptures": {
                   "0": {
-                     "name": "punctuation.definition.group.regexp"
+                     "name": "punctuation.definition.group.regex.sglp"
                   }
                },
                "patterns": [
@@ -160,61 +171,61 @@
                ]
             },
             {
-               "name": "constant.other.character-class.set.regexp",
+               "name": "constant.other.character-class.set.regexp.sgl",
                "begin": "(\\[)(\\^)?",
                "beginCaptures": {
                   "1": {
-                     "name": "punctuation.definition.character-class.regexp"
+                     "name": "punctuation.definition.character-class.regex.sglp"
                   },
                   "2": {
-                     "name": "keyword.operator.negation.regexp"
+                     "name": "keyword.operator.negation.regex.sglp"
                   }
                },
                "end": "(\\])",
                "endCaptures": {
                   "1": {
-                     "name": "punctuation.definition.character-class.regexp"
+                     "name": "punctuation.definition.character-class.regex.sglp"
                   }
                },
                "patterns": [
                   {
-                     "name": "constant.other.character-class.range.regexp",
+                     "name": "constant.other.character-class.range.regexp.sgl",
                      "match": "(?:.|(\\\\(?:[0-7]{3}|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}))|(\\\\c[A-Z])|(\\\\.))\\-(?:[^\\]\\\\]|(\\\\(?:[0-7]{3}|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}))|(\\\\c[A-Z])|(\\\\.))",
                      "captures": {
                         "1": {
-                           "name": "constant.character.numeric.regexp"
+                           "name": "constant.character.numeric.regex.sglp"
                         },
                         "2": {
-                           "name": "constant.character.control.regexp"
+                           "name": "constant.character.control.regex.sglp"
                         },
                         "3": {
-                           "name": "constant.character.escape.backslash.regexp"
+                           "name": "constant.character.escape.backslash.regex.sglp"
                         },
                         "4": {
-                           "name": "constant.character.numeric.regexp"
+                           "name": "constant.character.numeric.regex.sglp"
                         },
                         "5": {
-                           "name": "constant.character.control.regexp"
+                           "name": "constant.character.control.regex.sglp"
                         },
                         "6": {
-                           "name": "constant.character.escape.backslash.regexp"
+                           "name": "constant.character.escape.backslash.regex.sglp"
                         }
                      }
                   },
                   {
-                     "name": "constant.other.character-class.regexp",
+                     "name": "constant.other.character-class.regexp.sgl",
                      "match": "\\\\[wWsSdDtrnvf]|\\."
                   },
                   {
-                     "name": "constant.character.numeric.regexp",
+                     "name": "constant.character.numeric.regexp.sgl",
                      "match": "\\\\([0-7]{3}|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4})"
                   },
                   {
-                     "name": "constant.character.control.regexp",
+                     "name": "constant.character.control.regexp.sgl",
                      "match": "\\\\c[A-Z]"
                   },
                   {
-                     "name": "constant.character.escape.backslash.regexp",
+                     "name": "constant.character.escape.backslash.regexp.sgl",
                      "match": "\\\\."
                   }
                ]
@@ -222,18 +233,18 @@
          ]
       },
       "non-terminals": {
-         "name": "punctuation.definition.tag",
+         "name": "punctuation.definition.tag.sgl",
          "begin": "<",
          "end": ">",
          "patterns": [
             {
-               "name": "entity.name.tag",
+               "name": "entity.name.tag.sgl",
                "match": "[^\\n<>]*"
             }
          ]
       },
       "terminals": {
-         "name": "variable",
+         "name": "variable.sgl",
          "match": "\\b([a-zA-Z]|_[0-9a-zA-Z_])[0-9a-zA-Z_]*\\b"
       }
    }
