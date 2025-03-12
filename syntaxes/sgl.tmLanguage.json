@@ -46,7 +46,7 @@
             },
             {
                "name": "string.quoted.single",
-               "match": "'(?:(.)|([^\\n\\r']{2,}))?'",
+               "match": "'(?:(.|\\\\(?:[abtnvfre]|[0-3]?[0-7]{1,2}|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8}))|([^\\n\\r']{2,}))?'",
                "captures": {
                   "1": {
                      "name": "constant.character.escape"
